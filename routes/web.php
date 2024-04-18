@@ -26,12 +26,14 @@ Route::middleware(['auth', AdminRole::class])->group(function () {
 
 Route::middleware(['auth', AttyRole::class])->group(function () {
     Route::prefix('atty')->name('atty.')->group(function () {
-
+        Route::get('/home', [HomeController::class, 'index'])
+            ->name('home');
     });
 });
 
 Route::middleware(['auth', SecretaryRole::class])->group(function () {
     Route::prefix('secretary')->name('secretary.')->group(function () {
-
+        Route::get('/home', [HomeController::class, 'index'])
+            ->name('home');
     });
 });

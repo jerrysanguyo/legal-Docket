@@ -14,6 +14,6 @@ class AttyRole
             return $next($request);
         }
 
-        return redirect()->route('unauthorized');
+        return redirect()->route('unauthorized.index');
     }
 }
