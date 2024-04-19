@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Sharing extends Model
 {
     use HasFactory;
+
+    public static function getAllSharing()
+    {
+        return self::all();
+    }
 }

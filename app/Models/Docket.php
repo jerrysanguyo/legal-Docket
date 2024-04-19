@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Docket extends Model
 {
     use HasFactory;
+
+    public static function getAllDocket()
+    {
+        return self::all();
+    }
 }

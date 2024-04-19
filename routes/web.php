@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UnauthorizedController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CalendarController;
 use App\Http\Middleware\AdminRole;
 use App\Http\Middleware\AttyRole;
 use App\Http\Middleware\SecretaryRole;
@@ -21,6 +22,8 @@ Route::middleware(['auth', AdminRole::class])->group(function () {
     Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/home', [HomeController::class, 'index'])
             ->name('home');
+
+        Route::resource('/calendar',CalendarController::class);
     });
 });
 
